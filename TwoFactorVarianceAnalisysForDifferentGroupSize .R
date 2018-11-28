@@ -3,6 +3,7 @@ sink("statisticsDA2F.txt", split=TRUE)
 p1<-5
 p2<-4
 n<- length(file$тхап)
+globalMean<-mean(file$тхап)
 
 values<- array(list(), dim=c(p1, p2))
 means<- array(1, dim=c(p1,p2))
@@ -19,15 +20,17 @@ lengths<-array(1, dim=c(p1, p2))
 	}
 
 SSE<-0
+SSP<-0
 for (i in 1:p1) {
 	for (j in 1:p2) {
 		nij<-length(values[[i, j]]);
 		for (k in 1: nij) {
 			SSE<-SSE + (values[[i, j]][k] - means[i,j])^2
+			SSP<-SSP + (values[[i, j]][k] - globalMean)^2
 		}
 	}
 }
-SSE<-SSE/(n-p1*p2)
+SSE<-SSE
 print(paste0("SSE: ", SSE))
 
 GA<-0;
@@ -62,8 +65,8 @@ for (i in 1:p1) {
 	print(paste0("GA: ", GA))
 	print(paste0("GB: ", GB))
 
-	FAStat<- (GA-SSE)/((p1 - 1)* SSE)
-	FBStat<- (GB-SSE)/((p2 - 1)* SSE)
+	FAStat<- (GA-SSE) * (n-p1*p2)/((p1 - 1)* SSE)
+	FBStat<- (GB-SSE)* (n-p1*p2)/((p2 - 1)* SSE)
 	print(paste0("FAStat: ", FAStat))
 	print(paste0("FBStat: ", FBStat))
 
