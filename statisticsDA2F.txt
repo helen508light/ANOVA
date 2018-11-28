@@ -1,0 +1,15 @@
+[1] "SSE: 0.62123 "SSE: 0.62
+[1] "GA: 198.9879 "GA: 198
+[1] "GB: 240.6859 "GB: 240
+[1] "FAStat: 79.8 "FAStat: 79.
+[1] "FBStat: 128. "FBStat: 128
+[1] "fCriteriumA: "f
+[1] "fCriteriumB: "f
+[1] "alphaA: 0"
+[1] "alphaB: 0"
+ "alphaB: 0"
+lphaA: 0"
+[1] "alphaB: 0"
+ 0"
+[1] "alphaB: 0"
+1] "alphaB: 0"
